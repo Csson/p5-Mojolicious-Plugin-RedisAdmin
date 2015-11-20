@@ -2,7 +2,7 @@
 
 Mojolicious::Plugin::RedisAdmin - Short intro
 
-![Requires Perl unknown](https://img.shields.io/badge/perl-unknown-brightgreen.svg) [![Travis status](https://api.travis-ci.org//.svg?branch=master)](https://travis-ci.org//)
+![Requires Perl 5.16+](https://img.shields.io/badge/perl-5.16+-brightgreen.svg) [![Travis status](https://api.travis-ci.org/Csson/p5-Mojolicious-Plugin-RedisAdmin.svg?branch=master)](https://travis-ci.org/Csson/p5-Mojolicious-Plugin-RedisAdmin)
 
 # VERSION
 
