@@ -1,0 +1,7 @@
+/Mojolicious-Plugin-RedisAdmin-*
+/.build
+/_build*
+/Build
+MYMETA.*
+!META.json
+/.prove
