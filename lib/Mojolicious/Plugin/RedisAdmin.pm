@@ -41,11 +41,13 @@ sub register($self, $app, $conf) {
 sub setup_directories($self, $app) {
 
     # add our template directory
-    my $template_dir = path(dist_dir('Mojolicious-Plugin-RedisAdmin'))->child('templates');
+    my $template_dir = path(dist_dir('Mojolicious-Plugin-RedisAdmin'))->child(qw/templates/);
 
+    warn 'pushes? ' . $template_dir->realpath;
     if($template_dir->is_dir) {
         push $app->renderer->paths->@* => $template_dir->realpath;
     }
+    warn join ',' => $app->renderer->paths->@*;
 
     # add static directory
     my $public_dir = path(dist_dir('Mojolicious-Plugin-RedisAdmin'))->child('public');

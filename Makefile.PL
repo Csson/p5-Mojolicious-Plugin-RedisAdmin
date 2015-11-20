@@ -7,13 +7,18 @@ use 5.016000;
 
 use ExtUtils::MakeMaker;
 
+use File::ShareDir::Install;
+$File::ShareDir::Install::INCLUDE_DOTFILES = 1;
+$File::ShareDir::Install::INCLUDE_DOTDIRS = 1;
+install_share dist => "share";
 
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Short intro",
   "AUTHOR" => "Erik Carlsson <info\@code301.com>",
   "CONFIGURE_REQUIRES" => {
-    "ExtUtils::MakeMaker" => 0
+    "ExtUtils::MakeMaker" => 0,
+    "File::ShareDir::Install" => "0.06"
   },
   "DISTNAME" => "Mojolicious-Plugin-RedisAdmin",
   "EXE_FILES" => [],
@@ -35,6 +40,7 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "ExtUtils::MakeMaker" => 0,
+  "File::ShareDir::Install" => "0.06",
   "File::Spec" => 0,
   "Test::More" => "0.96"
 );
@@ -51,5 +57,10 @@ delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
 
 WriteMakefile(%WriteMakefileArgs);
 
+{
+package
+MY;
+use File::ShareDir::Install qw(postamble);
+}
 
 

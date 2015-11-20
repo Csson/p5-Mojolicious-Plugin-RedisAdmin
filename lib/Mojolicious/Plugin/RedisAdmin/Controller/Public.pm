@@ -11,7 +11,7 @@ package Mojolicious::Plugin::RedisAdmin::Controller::Public {
 
 
     sub renderin($self, $template, @args) {
-        my %layout = (layout => 'plugin-redis-admin/plugin-redis-admin-default');
+        my %layout = (layout => 'plugin-redis-admin-default');
         $self->render(%layout, template => join ('/' => ('plugin-redis-admin', $template)), @args);
     }
 }

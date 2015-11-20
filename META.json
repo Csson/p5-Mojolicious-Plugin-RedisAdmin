@@ -26,7 +26,8 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "0"
+            "ExtUtils::MakeMaker" : "0",
+            "File::ShareDir::Install" : "0.06"
          }
       },
       "develop" : {
@@ -64,7 +65,7 @@
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0",
             "Dist::Zilla::Plugin::ReversionOnRelease" : "0",
             "Dist::Zilla::Plugin::RunExtraTests" : "0",
-            "Dist::Zilla::Plugin::ShareDir" : "0",
+            "Dist::Zilla::Plugin::ShareDir::Tarball" : "0",
             "Dist::Zilla::Plugin::Test::ReportPrereqs" : "0",
             "Dist::Zilla::Plugin::TestRelease" : "0",
             "Dist::Zilla::Plugin::TravisYML" : "0",
@@ -107,6 +108,14 @@
    "provides" : {
       "Mojolicious::Plugin::RedisAdmin" : {
          "file" : "lib/Mojolicious/Plugin/RedisAdmin.pm",
+         "version" : "0.0001"
+      },
+      "Mojolicious::Plugin::RedisAdmin::Controller::Public" : {
+         "file" : "lib/Mojolicious/Plugin/RedisAdmin/Controller/Public.pm",
+         "version" : "0.0001"
+      },
+      "RedisAdminApp" : {
+         "file" : "lib/RedisAdminApp.pm",
          "version" : "0.0001"
       }
    },
