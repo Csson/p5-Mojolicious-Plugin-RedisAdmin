@@ -21,6 +21,7 @@ sub register($self, $app, $conf) {
     $self->redis($conf->{'redis'});
 
     $self->setup_directories($app);
+    $app->plugin(BootstrapHelpers => { tag_prefix => 'bs_'});
 
     my $router = exists $conf->{'router'}    ?  $conf->{'router'}
                : exists $conf->{'condition'} ?  $app->routes->over($conf->{'condition'})
@@ -44,17 +45,17 @@ sub setup_directories($self, $app) {
     if(path(qw/share templates/)->exists) {
         push $app->renderer->paths->@* => path(qw/share templates/)->realpath;
     }
-    my $template_dir = path(dist_dir('Mojolicious-Plugin-RedisAdmin'))->child(qw/templates/);
+    my $template_dir = path(dist_dir('App-RedisMin'))->child(qw/templates/);
 
     if($template_dir->is_dir) {
         push $app->renderer->paths->@* => $template_dir->realpath;
     }
 
     # add static directory
-    if(path(qw/public/)->exists) {
-        push $app->static->paths->@* => path(qw/public/)->realpath;
+    if(path(qw/share public/)->exists) {
+        push $app->static->paths->@* => path(qw/share public/)->realpath;
     }
-    my $public_dir = path(dist_dir('Mojolicious-Plugin-RedisAdmin'))->child('public');
+    my $public_dir = path(dist_dir('App-RedisMin'))->child('public');
 
     if($public_dir->is_dir) {
         push $app->static->paths->@* => $public_dir->realpath;

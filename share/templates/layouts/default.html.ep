@@ -7,10 +7,19 @@
         <link rel="stylesheet" href="/resources/bow/bootstrap/dist/css/bootstrap-theme.min.css">
         <script src="/resources/bow/jquery/dist/jquery.min.js"></script>
         <script src="/resources/bow/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/resources/bow/knockout/dist/knockout.js"></script>
     </head>
     <body>
         <div class="container">
-            <%= content %>
+            <%=     bs_navbar header => ['Redis Admin', ['home'], hamburger, toggler => 'navbar-collapse'],
+                    nav => [
+                        items => [
+                            ['Actions', ['#'], items => [
+                                ['Scan', ['#'], data => { bind => 'click: scanDatabases' }],
+                            ] ],
+                        ]
+                    ]
+            %>
         </div>
     </body>
 </html>
