@@ -1,10 +1,10 @@
 {
-   "abstract" : "..",
+   "abstract" : "Redis GUI on Mojo",
    "author" : [
       "Erik Carlsson <info@code301.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.031, CPAN::Meta::Converter version 2.143240",
+   "generated_by" : "Dist::Zilla version 5.042, Dist::Iller version 0.1202, CPAN::Meta::Converter version 2.143240",
    "license" : [
       "perl_5"
    ],
@@ -12,15 +12,15 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "App-RedisMin",
+   "name" : "Redisity",
    "no_index" : {
       "directory" : [
-         "t",
-         "xt",
+         "eg",
+         "examples",
          "inc",
          "share",
-         "eg",
-         "examples"
+         "t",
+         "xt"
       ]
    },
    "prereqs" : {
@@ -34,15 +34,18 @@
          "requires" : {
             "Dist::Zilla::Plugin::CheckChangesHasContent" : "0",
             "Dist::Zilla::Plugin::CheckExtraTests" : "0",
+            "Dist::Zilla::Plugin::Clean" : "0",
             "Dist::Zilla::Plugin::ConfirmRelease" : "0",
-            "Dist::Zilla::Plugin::ContributorsFromGit" : "0",
             "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0",
+            "Dist::Zilla::Plugin::DistIller::MetaGeneratedBy" : "0",
             "Dist::Zilla::Plugin::ExecDir" : "0",
             "Dist::Zilla::Plugin::Git::Check" : "0",
+            "Dist::Zilla::Plugin::Git::Contributors" : "0",
             "Dist::Zilla::Plugin::Git::GatherDir" : "0",
             "Dist::Zilla::Plugin::Git::Push" : "0",
             "Dist::Zilla::Plugin::Git::Tag" : "0",
             "Dist::Zilla::Plugin::GithubMeta" : "0",
+            "Dist::Zilla::Plugin::InstallRelease" : "0",
             "Dist::Zilla::Plugin::License" : "0",
             "Dist::Zilla::Plugin::MakeMaker" : "0",
             "Dist::Zilla::Plugin::Manifest" : "0",
@@ -106,29 +109,21 @@
       }
    },
    "provides" : {
-      "App::RedisMin" : {
-         "file" : "lib/App/RedisMin.pm",
-         "version" : "0.0001"
-      },
-      "App::RedisMin::Controller::Public" : {
-         "file" : "lib/App/RedisMin/Controller/Public.pm",
-         "version" : "0.0001"
-      },
-      "Mojolicious::Plugin::RedisAdmin" : {
-         "file" : "lib/Mojolicious/Plugin/RedisAdmin.pm",
+      "Redisity" : {
+         "file" : "lib/Redisity.pm",
          "version" : "0.0001"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/Csson/p5-Mojolicious-Plugin-RedisAdmin/issues"
+         "web" : "https://github.com/Csson/p5-Redisity/issues"
       },
-      "homepage" : "https://metacpan.org/release/App-RedisMin",
+      "homepage" : "https://metacpan.org/release/Redisity",
       "repository" : {
          "type" : "git",
-         "url" : "https://github.com/Csson/p5-Mojolicious-Plugin-RedisAdmin.git",
-         "web" : "https://github.com/Csson/p5-Mojolicious-Plugin-RedisAdmin"
+         "url" : "https://github.com/Csson/p5-Redisity.git",
+         "web" : "https://github.com/Csson/p5-Redisity"
       }
    },
    "version" : "0.0001"
