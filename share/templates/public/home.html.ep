@@ -1,1 +1,20 @@
-hello
+hello <%= $hej %>
+
+%= table condensed, striped, hover, begin
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th style="width: 20%;">TTL</th>
+            <th style="width: 10%;">Actions</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: items()">
+        <tr data-bind="attr: { 'data-key': actual_key }">
+            <td data-bind="text: key"></td>
+            <td><%= button 'TTL', [], data => { toggle => 'button', bind => 'clickToggler: fetch_ttl' }, style => 'outline: 0;' %>
+                <span data-bind="visible: fetch_ttl, text: ttl"></span>
+            </td>
+            <td><%= button '', ['#'], danger, class => 'glyphicon glyphicon-remove', data => { bind => 'click: $parent.removeKey' } %></td>
+        </tr>
+    </tbody>
+% end

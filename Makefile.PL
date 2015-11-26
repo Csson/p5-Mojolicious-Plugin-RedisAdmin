@@ -14,17 +14,17 @@ install_share dist => "share";
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Short intro",
+  "ABSTRACT" => "..",
   "AUTHOR" => "Erik Carlsson <info\@code301.com>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0,
     "File::ShareDir::Install" => "0.06"
   },
-  "DISTNAME" => "Mojolicious-Plugin-RedisAdmin",
+  "DISTNAME" => "App-RedisMin",
   "EXE_FILES" => [],
   "LICENSE" => "perl",
   "MIN_PERL_VERSION" => "5.016000",
-  "NAME" => "Mojolicious::Plugin::RedisAdmin",
+  "NAME" => "App::RedisMin",
   "PREREQ_PM" => {},
   "TEST_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0,

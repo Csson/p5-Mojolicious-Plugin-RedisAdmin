@@ -3,23 +3,26 @@
     <head>
         <meta charset="utf-8" />
         <title>Redis Admin</title>
-        <link rel="stylesheet" href="/resources/bow/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/resources/bow/bootstrap/dist/css/bootstrap-theme.min.css">
         <script src="/resources/bow/jquery/dist/jquery.min.js"></script>
         <script src="/resources/bow/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="/resources/bow/knockout/dist/knockout.js"></script>
+        <script src="/resources/redismin.js"></script>
+
+        <link rel="stylesheet" href="/resources/bow/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/resources/bow/bootstrap/dist/css/bootstrap-theme.min.css" />
     </head>
     <body>
         <div class="container">
-            <%=     bs_navbar header => ['Redis Admin', ['home'], hamburger, toggler => 'navbar-collapse'],
+            <%=     navbar header => ['Redis Admin', ['home'], hamburger, toggler => 'navbar-collapse'],
                     nav => [
                         items => [
                             ['Actions', ['#'], items => [
                                 ['Scan', ['#'], data => { bind => 'click: scanDatabases' }],
                             ] ],
-                        ]
+                        ],
                     ]
             %>
+            <%= content %>
         </div>
     </body>
 </html>

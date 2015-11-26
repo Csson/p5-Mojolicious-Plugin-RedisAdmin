@@ -1,5 +1,5 @@
 {
-   "abstract" : "Short intro",
+   "abstract" : "..",
    "author" : [
       "Erik Carlsson <info@code301.com>"
    ],
@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "Mojolicious-Plugin-RedisAdmin",
+   "name" : "App-RedisMin",
    "no_index" : {
       "directory" : [
          "t",
@@ -106,16 +106,16 @@
       }
    },
    "provides" : {
+      "App::RedisMin" : {
+         "file" : "lib/App/RedisMin.pm",
+         "version" : "0.0001"
+      },
+      "App::RedisMin::Controller::Public" : {
+         "file" : "lib/App/RedisMin/Controller/Public.pm",
+         "version" : "0.0001"
+      },
       "Mojolicious::Plugin::RedisAdmin" : {
          "file" : "lib/Mojolicious/Plugin/RedisAdmin.pm",
-         "version" : "0.0001"
-      },
-      "Mojolicious::Plugin::RedisAdmin::Controller::Public" : {
-         "file" : "lib/Mojolicious/Plugin/RedisAdmin/Controller/Public.pm",
-         "version" : "0.0001"
-      },
-      "RedisAdminApp" : {
-         "file" : "lib/RedisAdminApp.pm",
          "version" : "0.0001"
       }
    },
@@ -124,7 +124,7 @@
       "bugtracker" : {
          "web" : "https://github.com/Csson/p5-Mojolicious-Plugin-RedisAdmin/issues"
       },
-      "homepage" : "https://metacpan.org/release/Mojolicious-Plugin-RedisAdmin",
+      "homepage" : "https://metacpan.org/release/App-RedisMin",
       "repository" : {
          "type" : "git",
          "url" : "https://github.com/Csson/p5-Mojolicious-Plugin-RedisAdmin.git",

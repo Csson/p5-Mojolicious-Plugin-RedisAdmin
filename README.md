@@ -1,6 +1,6 @@
 # NAME
 
-Mojolicious::Plugin::RedisAdmin - Short intro
+App::RedisMin - ..
 
 ![Requires Perl 5.16+](https://img.shields.io/badge/perl-5.16+-brightgreen.svg) [![Travis status](https://api.travis-ci.org/Csson/p5-Mojolicious-Plugin-RedisAdmin.svg?branch=master)](https://travis-ci.org/Csson/p5-Mojolicious-Plugin-RedisAdmin)
 
@@ -8,23 +8,13 @@ Mojolicious::Plugin::RedisAdmin - Short intro
 
 Version 0.0001, released 2015-11-20.
 
-# SYNOPSIS
-
-    use Mojolicious::Plugin::RedisAdmin;
-
-# DESCRIPTION
-
-Mojolicious::Plugin::RedisAdmin is ...
-
-# SEE ALSO
-
 # SOURCE
 
 [https://github.com/Csson/p5-Mojolicious-Plugin-RedisAdmin](https://github.com/Csson/p5-Mojolicious-Plugin-RedisAdmin)
 
 # HOMEPAGE
 
-[https://metacpan.org/release/Mojolicious-Plugin-RedisAdmin](https://metacpan.org/release/Mojolicious-Plugin-RedisAdmin)
+[https://metacpan.org/release/App-RedisMin](https://metacpan.org/release/App-RedisMin)
 
 # AUTHOR
 

@@ -2,7 +2,7 @@
 doctype: dist
 
 header:
-  name: Mojolicious-Plugin-RedisAdmin
+  name: App-RedisMin
   author:
     - Erik Carlsson <info@code301.com>
   license: Perl_5
@@ -16,10 +16,6 @@ prereqs:
 
 plugins:
   - +config: Author::CSSON
-  
-  - +add_plugin: TravisYML
-    +before: Git::Tag
-    perl_version: 5.16 5.20
 
   - +replace_plugin: ShareDir
     +with: ShareDir::Tarball
