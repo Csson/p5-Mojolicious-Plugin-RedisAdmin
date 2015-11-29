@@ -1,0 +1,14 @@
+<!--
+  The navigation UI that is docked to the top of the window. Most of this markup simply
+  follows Bootstrap conventions. The only Knockout-specific parts are the data-bind
+  attributes on the <li> elements.
+-->
+<%=     navbar  header => ['Redisity', ['#'], hamburger, toggler => 'navbar-collapse'],
+                container => 'normal',
+                nav => [
+                    items => [
+                        ['Main', ['#'], -li => [ data => { bind => "css: { active: route().page === 'home-page' }" } ] ],
+                        ['About', ['#about'], -li => [ data => { bind => "css: { active: route().page === 'about-page' }" } ] ],
+                    ],
+                ]
+            %>

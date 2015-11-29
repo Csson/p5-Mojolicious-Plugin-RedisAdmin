@@ -1,0 +1,44 @@
+<%= table 'Keys', condensed, striped, hover,
+                  panel => { -header => [buttongroup => [
+                        buttons => [
+                            button => ['New', ['#'], primary, caret, data => { bind => 'clickBlur: function() {}' },
+                                items => [
+                                    ['Key', ['#'] ],
+                                    ['Hash', ['#'] ]
+                                ],
+                            ],
+                            button => ['Scan', ['#'], primary, data => { bind => 'clickBlur: scanDatabases' }]
+                        ]
+                  ]]}, begin %>
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th style="width: 20%;">
+                <%= buttongroup ['TTL', xsmall, primary, caret, items => [
+                    'Toogle all',
+                    ['On', ['#'] ],
+                    ['Off', ['#'] ],
+                    'Fetch TTL every',
+                    ['2 seconds', ['#'] ],
+                    ['5 seconds', ['#'] ],
+                    ['10 seconds', ['#'] ],
+                    ['30 seconds', ['#'] ],
+                    ['1 minute', ['#'] ],
+                ]] %>              
+            </th>
+            <th style="width: 10%;">Actions</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: items()">
+        <tr>
+            <td class="clickable" data-bind="clickToggler: open, click: fetchValue, text: key"></td>
+            <td><%= button 'TTL', ['#'], small, data => { toggle => 'button', bind => 'clickToggler: fetch_ttl' }, style => 'outline: 0;' %>
+                <span data-bind="visible: fetch_ttl, text: ttl"></span>
+            </td>
+            <td><%= button '', ['#'], small, danger, class => 'glyphicon glyphicon-remove', data => { bind => 'click: function() { $parent.removeKey($data) } ' } %></td>
+        </tr>
+        <tr data-bind="visible: open">
+            <td colspan="3"><pre style="max-height: 300px; max-width: 1120px;" data-bind="text: keyValue"></pre></td>
+        </tr>
+    </tbody>
+<% end %>

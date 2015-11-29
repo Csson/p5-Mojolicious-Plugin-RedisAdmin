@@ -1,0 +1,53 @@
+
+            <div class="panel panel-default">
+            
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+            <div class="btn-group pull-right">
+                
+                <div class="btn-group">
+                    
+            <a class="btn btn-primary dropdown-toggle" data-bind="clickBlur: function() {}" data-toggle="dropdown" href="#" type="button">New <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li ><a class="menuitem" href="#" tabindex="-1">Key</a></li><li ><a class="menuitem" href="#" tabindex="-1">Hash</a></li>
+            </ul>
+        
+                </div>
+            <a class="btn btn-primary" data-bind="clickBlur: scanDatabases" href="#">Scan</a>
+            </div>Keys</h3>
+                </div>
+            
+                
+            <table class="table table-condensed table-hover table-striped" class="table table-condensed table-hover table-striped">
+            
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th style="width: 20%;">
+                <div class="btn-group">
+            <button class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" type="button">TTL <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li class="dropdown-header">Toogle all</li><li ><a class="menuitem" href="#" tabindex="-1">On</a></li><li ><a class="menuitem" href="#" tabindex="-1">Off</a></li><li class="dropdown-header">Fetch TTL every</li><li ><a class="menuitem" href="#" tabindex="-1">2 seconds</a></li><li ><a class="menuitem" href="#" tabindex="-1">5 seconds</a></li><li ><a class="menuitem" href="#" tabindex="-1">10 seconds</a></li><li ><a class="menuitem" href="#" tabindex="-1">30 seconds</a></li><li ><a class="menuitem" href="#" tabindex="-1">1 minute</a></li>
+            </ul>
+        </div>              
+            </th>
+            <th style="width: 10%;">Actions</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: items()">
+        <tr>
+            <td class="clickable" data-bind="clickToggler: open, click: fetchValue, text: key"></td>
+            <td><a class="btn btn-default btn-sm" data-bind="clickToggler: fetch_ttl" data-toggle="button" href="#" style="outline: 0;">TTL</a>
+                <span data-bind="visible: fetch_ttl, text: ttl"></span>
+            </td>
+            <td><a class="btn btn-danger btn-sm glyphicon glyphicon-remove" data-bind="click: function() { $parent.removeKey($data) } " href="#"></a></td>
+        </tr>
+        <tr data-bind="visible: open">
+            <td colspan="3"><pre style="max-height: 300px; max-width: 1120px;" data-bind="text: keyValue"></pre></td>
+        </tr>
+    </tbody>
+
+            </table>
+        
+            </div>
+        
